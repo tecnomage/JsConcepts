@@ -1,24 +1,22 @@
 const pegaListagem = () => {
-    let listagem;
-    fetch("https://jsonplaceholder.typicode.com/todos/")
-  .then(res => listagem = res.json())
-  .then(json => { return json})
+  var listagem;
+  fetch("https://jsonplaceholder.typicode.com/todos/")
+    .then(res => {
+      return res.data;
+    })
+    .catch(err => console.log(err));
+  //.then(json => {  json})
+  //console.log(listagem)
   return listagem;
-}
+};
 
-let listagem;
+let teste
 const $root = document.querySelector("#root");
 
-listagem = pegaListagem();
-console.log(listagem)
+teste = pegaListagem();
+console.log(teste)
 const $wrap = document.createElement("div");
-//const teste = 
-$wrap.innerHTML = '<p> teste <p>';
-//console.log(teste);
+$wrap.innerHTML = "<h2> teste</h2>";
 $root.insertBefore($wrap, null);
 
 console.log("teste222");
-
-
-
-
