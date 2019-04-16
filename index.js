@@ -1,9 +1,10 @@
 const pegaListagem = () => {
   var listagem;
   fetch("https://jsonplaceholder.typicode.com/todos/")
-    .then(res => {
-      return res.data;
-    })
+    .then(res =>  res.json())
+    .then(saida => {
+      console.log(saida)
+      return saida})
     .catch(err => console.log(err));
   //.then(json => {  json})
   //console.log(listagem)
